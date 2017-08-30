@@ -3,8 +3,8 @@
   Plugin Name: Advanced Ads – Code Highlighter
   Plugin URI: #
   Description: Highlight code in the textarea field of the plain text ads
-  Version: 1.0.1
-  Tested up to: 4.7.2
+  Version: 1.0.2
+  Tested up to: 4.8.1
   Author: Thomas Maier
   Author URI: https://wpadvancedads.com
   Text Domain: advanced-ads-code-highlighter

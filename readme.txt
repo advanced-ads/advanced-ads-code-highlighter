@@ -1,4 +1,4 @@
-=== Advanced Ads – Code Highlighter ===
+=== Advanced Ads - Code Highlighter ===
 Contributors: webzunft
 Donate link: https://wpadvancedads.com/
 Tags: ads, code highlighter, highlighter, code, codemirror
@@ -36,6 +36,10 @@ Advanced Ads is a powerful, but easy to use ad management plugin. Among the [man
 2. A default ad code with code highlighting after activating this add-on
 
 == Changelog ==
+
+= 1.0.2 =
+
+* fixed plugin title
 
 = 1.0.1 =
 
