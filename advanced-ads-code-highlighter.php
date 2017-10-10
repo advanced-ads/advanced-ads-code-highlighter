@@ -1,14 +1,14 @@
 <?php
 /*
   Plugin Name: Advanced Ads – Code Highlighter
-  Plugin URI: #
+  Plugin URI: https://wordpress.org/plugins/advanced-ads-code-highlighter
   Description: Highlight code in the textarea field of the plain text ads
-  Version: 1.0.2
+  Version: 1.0.3
   Tested up to: 4.8.1
   Author: Thomas Maier
   Author URI: https://wpadvancedads.com
   Text Domain: advanced-ads-code-highlighter
-  Domain Path: /language/
+  Domain Path: /languages/
  */
 if (!defined('ABSPATH')) {
     exit;
@@ -17,20 +17,21 @@ if (!defined('ABSPATH')) {
 class Advanced_Ads_Code_Highlighter {
 
     public static function init() {
-	$class = __CLASS__;
-	new $class;
+		$class = __CLASS__;
+		new $class;
     }
 
     # To run this class function 0
 
     public function __construct() {
-	add_action('admin_enqueue_scripts', array($this, 'add_css'));
-	add_action('admin_enqueue_scripts', array($this, 'add_js'));
-	add_action('admin_footer', array($this, 'run_js'));
+		add_action('plugins_loaded', array($this, 'advanced_ads_code_highlighter_load_plugin_textdomain'));
+		add_action('admin_enqueue_scripts', array($this, 'add_css'));
+		add_action('admin_enqueue_scripts', array($this, 'add_js'));
+		add_action('admin_footer', array($this, 'run_js'));
     }
 
     public function add_css() {
-// only load on ad edit pages
+	// only load on ad edit pages
 	if( ! $this->is_ad_edit_screen() ){
 	    return;
 	}
@@ -96,6 +97,10 @@ class Advanced_Ads_Code_Highlighter {
 	    });
 	</script><?php
     }
+
+	function advanced_ads_code_highlighter_load_plugin_textdomain() {
+		load_plugin_textdomain( 'advanced-ads-code-highlighter', FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
+	}
 
 }
 
